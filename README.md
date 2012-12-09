@@ -62,7 +62,7 @@ var reducer = function (key, values) {
 
 module.exports = {
   "mapper" : mapper,
-	"reducer": reducer,
+  "reducer": reducer,
 };
 ```
 
