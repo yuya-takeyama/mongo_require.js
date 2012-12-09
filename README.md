@@ -76,7 +76,10 @@ var mr = mongo_require('/path/to/your_mapreduce.js');
 db.users.mapReduce(mr.mapper, mr.reducer, {"out": "mapreduce_result"});
 ```
 
-You can unit-test Mapper and Reducer using any testing framework of Node.js!
+You can unit-test Reducer using any testing framework of Node.js!
+
+Notice that testing Mapper function is not supported now.  
+It requires mocking `emit()` and assertion for emitted values.
 
 Author
 ------
