@@ -1,20 +1,23 @@
 var exports
   , module
-  , mongo_require
-  , __cleanup_mongo_require__;
+  , mongo_require;
 
-mongo_require = function (file) {
-  load(file);
+(function () {
+  var cleanup;
 
-  var result = module.exports;
-  __cleanup_mongo_require__();
+  mongo_require = function (file) {
+    load(file);
 
-  return result;
-};
+    var result = module.exports;
+    cleanup();
 
-__cleanup_mongo_require__ = function () {
-  exports = {};
-  module  = {"exports": exports};
-};
+    return result;
+  };
 
-__cleanup_mongo_require__();
+  cleanup = function () {
+    exports = {};
+    module  = {"exports": exports};
+  };
+
+  cleanup();
+})();
